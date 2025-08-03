@@ -10,7 +10,7 @@ This project demonstrates:
 - ✅ Model explainability with SHAP
 - ✅ GenAI integration for benchmarking
 - ✅ Deployed UI for real-world usage
-- ✅ Apple-level technical storytelling
+- ✅ High-level technical storytelling
 
 ## 📊 Dataset
 
