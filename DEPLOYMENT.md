@@ -179,13 +179,5 @@ curl http://localhost:8501/_stcore/health
 
 ### 🎉 Success!
 
-Once deployed, your app will be available at:
-`https://your-app-name.streamlit.app`
 
-Share the URL with users to start detecting fake job postings!
-
----
-
-**Last Updated**: August 2024  
-**Version**: 1.0.0  
 **Maintainer**: ML Engineering Team 
