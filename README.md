@@ -20,7 +20,7 @@ This project demonstrates:
 - **Text Fields**: Combined from title, company_profile, description, requirements, benefits, department
 - **Class Imbalance**: 95.2% real jobs, 4.8% fake jobs (realistic for fraud detection)
 
-## 🚀 Project Progress
+## 🚀 Latest Project Progress
 
 ### ✅ Phase 9: Streamlit Web Application (COMPLETED)
 
