@@ -180,4 +180,3 @@ curl http://localhost:8501/_stcore/health
 ### 🎉 Success!
 
 
-**Maintainer**: ML Engineering Team 
