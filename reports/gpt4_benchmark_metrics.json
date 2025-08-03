@@ -1,0 +1,8 @@
+{
+  "rf_accuracy": 0.0,
+  "gpt4_accuracy": 0.7333333333333333,
+  "gpt4_wins": 11,
+  "rf_wins": 0,
+  "ties": 4,
+  "total_samples": 15
+}

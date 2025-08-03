@@ -1,0 +1,16 @@
+ID,True_Label,RF_Prediction,GPT4_Prediction,Correct_RF,Correct_GPT4,Winner,Error_Type,RF_Probability
+1,1,0,1,0,1,GPT-4,false_negative,0.35184607733293466
+2,1,0,1,0,1,GPT-4,false_negative,0.16774259082487475
+3,0,1,0,0,1,GPT-4,false_positive,0.5437281601111696
+4,1,0,0,0,0,Both,false_negative,0.2742644805678068
+5,0,1,0,0,1,GPT-4,false_positive,0.504909579775991
+6,1,0,0,0,0,Both,false_negative,0.20754136042409088
+7,1,0,1,0,1,GPT-4,false_negative,0.23856045651675195
+8,0,1,0,0,1,GPT-4,false_positive,0.5354626079835831
+9,1,0,0,0,0,Both,false_negative,0.31391878371183496
+10,1,0,1,0,1,GPT-4,false_negative,0.3508238444615674
+11,1,0,1,0,1,GPT-4,false_negative,0.3568827970548276
+12,1,0,1,0,1,GPT-4,false_negative,0.40125797896136783
+13,1,0,0,0,0,Both,false_negative,0.43513169291024417
+14,0,1,0,0,1,GPT-4,false_positive,0.5004199624289138
+15,0,1,0,0,1,GPT-4,false_positive,0.512625460793483

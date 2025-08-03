@@ -1,0 +1,95 @@
+FAKE JOB DETECTION - MODEL PIPELINE SUMMARY
+==================================================
+
+PRODUCTION DEPLOYMENT ARTIFACTS
+-------------------------------
+
+1. TF-IDF VECTORIZER
+   File: model/tfidf_vectorizer.pkl
+   Purpose: Text feature extraction
+   Parameters: max_features=10000, ngram_range=(1,2), stop_words='english'
+   Usage: vectorizer = joblib.load('model/tfidf_vectorizer.pkl')
+
+2. OPTIMIZED RANDOM FOREST MODEL
+   File: models/random_forest_cv.pkl
+   Purpose: Main classification model
+   Optimization: 5-fold cross-validation + hyperparameter tuning
+   Best Parameters:
+     - n_estimators: 200
+     - max_depth: None
+     - min_samples_split: 10
+     - min_samples_leaf: 4
+     - bootstrap: False
+   Usage: model = joblib.load('models/random_forest_cv.pkl')
+
+3. SHAP EXPLAINER (Optional)
+   File: explainability/shap_explainer.pkl
+   Purpose: Model explainability and feature importance
+   Usage: explainer = joblib.load('explainability/shap_explainer.pkl')
+
+DEPLOYMENT PIPELINE
+------------------
+
+1. Load Artifacts:
+   ```python
+   import joblib
+   
+   # Load vectorizer and model
+   vectorizer = joblib.load('model/tfidf_vectorizer.pkl')
+   model = joblib.load('models/random_forest_cv.pkl')
+   ```
+
+2. Preprocess Text:
+   ```python
+   # Clean and combine text fields
+   combined_text = clean_and_combine_text(title, company_profile, description, requirements, benefits)
+   ```
+
+3. Extract Features:
+   ```python
+   # Transform text to TF-IDF features
+   X = vectorizer.transform([combined_text])
+   ```
+
+4. Make Prediction:
+   ```python
+   # Get prediction and probability
+   prediction = model.predict(X)[0]  # 0 = real, 1 = fake
+   probability = model.predict_proba(X)[0, 1]  # Probability of being fake
+   ```
+
+5. Optional: SHAP Explanation:
+   ```python
+   # Load explainer
+   explainer = joblib.load('explainability/shap_explainer.pkl')
+   
+   # Get SHAP values
+   shap_values = explainer(X)
+   ```
+
+PERFORMANCE METRICS
+------------------
+- Accuracy: 98.07%
+- F1-Score: 77.38%
+- Precision: 89.39%
+- Recall: 68.21%
+- ROC-AUC: 98.86%
+
+MODEL CHARACTERISTICS
+--------------------
+- Algorithm: Random Forest
+- Training Samples: 14,304
+- Test Samples: 3,576
+- Features: 10,000 TF-IDF features
+- Class Distribution: 95.2% real, 4.8% fake
+- Optimization: 5-fold cross-validation + RandomizedSearchCV
+
+DEPLOYMENT NOTES
+---------------
+- Model handles severe class imbalance (typical for fraud detection)
+- TF-IDF vectorizer requires same preprocessing as training data
+- Model is optimized for F1-score (balanced precision/recall)
+- SHAP explainer available for interpretability
+- All artifacts are production-ready and serialized with joblib
+
+CREATED: 2025-08-03 18:13:52

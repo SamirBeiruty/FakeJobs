@@ -1,0 +1,31 @@
+FAKE JOB DETECTION - CLASSIFICATION REPORT
+==================================================
+
+TEST SET DISTRIBUTION:
+  Real jobs (0): 3,403 (95.2%)
+  Fake jobs (1): 173 (4.8%)
+  Total: 3,576
+
+PERFORMANCE METRICS:
+  Accuracy: 0.9427 (94.27%)
+  Precision: 0.4494
+  Recall: 0.8208
+  F1-Score: 0.5808
+  ROC-AUC: 0.9720
+
+DETAILED CLASSIFICATION REPORT:
+------------------------------
+              precision    recall  f1-score   support
+
+        Real       0.99      0.95      0.97      3403
+        Fake       0.45      0.82      0.58       173
+
+    accuracy                           0.94      3576
+   macro avg       0.72      0.88      0.78      3576
+weighted avg       0.96      0.94      0.95      3576
+
+CONFUSION MATRIX:
+  [[3229  174]
+   [  31  142]]
+  (Real predicted as Real: 3229, Real predicted as Fake: 174)
+  (Fake predicted as Real: 31, Fake predicted as Fake: 142)
