@@ -1,4 +1,4 @@
-# Fake Job Post Detector - Apple-Level ML Pipeline with GenAI Comparison
+# Fake Job Post Detector - High level ML Pipeline with GenAI Comparison
 
 **A comprehensive machine learning project that detects fake job postings using text analysis, with GenAI benchmarking and real-world deployment.**
 
